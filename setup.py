@@ -1,13 +1,13 @@
 from setuptools import setup
 
 setup(name='cssa_shared-lib',
-      version='0.12',
+      version='0.13',
       description='CSSA common libraries',
       url='https://github.com/computer-solutions-gr/shared-lib',
       author='Stavros Pitoglou',
       author_email='s.pitoglou@csl.gr',
       license='GNU',
-      packages=['cssalib', 'projects'],
+      packages=['cssalib', 'projects.diabetes'],
     #   test_suite='nose.collector',
     #   tests_require=['nose'],
       install_requires=[
