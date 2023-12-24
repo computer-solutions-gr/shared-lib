@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='cssa_shared-lib',
-      version='0.1',
+      version='0.11',
       description='CSSA common libraries',
       url='https://github.com/computer-solutions-gr/shared-lib',
       author='Stavros Pitoglou',
