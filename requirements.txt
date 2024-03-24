@@ -6,3 +6,5 @@ matplotlib==3.8.2
 pytest==7.4.3
 pandas==2.1.4
 pymongo==4.6.1
+sphinx==7.2.6
+sphinx-rtd-theme==2.0.0

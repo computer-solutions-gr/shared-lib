@@ -41,18 +41,20 @@ def read_df(filename="test.pkl"):
     return pd.read_pickle(filename)
 
 
-
 def slice_df(self, dataframe, index, number):
     """
-    The function `slice_df` takes a dataframe, an index, and a number as input and returns a sliced
-    portion of the dataframe starting from the given index and containing the specified number of
-    rows.
+    Slices a DataFrame based on the specified index and number of rows.
 
-    :param dataframe: The dataframe parameter is the pandas DataFrame that you want to slice
-    :param index: The starting index of the slice. It specifies the position of the first element to
-    include in the slice
-    :param number: The number of rows to slice from the dataframe starting from the specified index
-    :return: a slice of the dataframe starting from the specified index and containing the specified
-    number of rows.
+    Args:
+        dataframe (pandas.DataFrame): The DataFrame to be sliced.
+        index (int): The starting index of the slice.
+        number (int): The number of rows to include in the slice.
+
+    Returns:
+        pandas.DataFrame: The sliced DataFrame.
+
+    Examples:
+        sliced_df = slice_df(dataframe, 2, 5)
     """
+
     return dataframe[index : index + number]
