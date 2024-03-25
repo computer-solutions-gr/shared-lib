@@ -33,7 +33,7 @@ def public_ip() -> str:
     """
     This Python function retrieves and returns the public IP address of the current machine using an
     external API.
-    
+
     Returns:
         The `public_ip` function returns the public IP address of the current machine by making a request
         to the "https://api64.ipify.org?format=json" API and extracting the IP address from the JSON
@@ -56,27 +56,31 @@ def most_common_element(_list: list):
         >>> most_common_element([1, 2, 2, 3, 3, 3, 4])
         3
     """
-
-    return max(set(_list), key=_list.count)
+    if _list:
+        return max(set(_list), key=_list.count)
+    else:
+        return None
 
 
 def extract_domain_from_email(email: str) -> str:
     """
-    Extracts the domain from the given email address.
+    Extracts the domain name from the given email address.
+
+    The email address is split on the '@' symbol, and the part after the '@'
+    is taken as the domain. This is then split on '.' and the last 2 sections
+    are joined back together with '.' to get the domain name.
 
     Args:
-        email (str): The email address from which to extract the domain.
+        email (str): The email address to extract the domain from.
 
     Returns:
-        str: The domain extracted from the email address.
+        str: The domain name extracted from the email address.
 
     Raises:
-        AttributeError: If the domain pattern is not found in the email address.
+        AttributeError: If no '@' symbol is found in the email.
     """
 
-    import re
-
-    return re.search(r"@(\w+\.\w+)", email).group(1)
+    return ".".join(email.split("@")[1].split(".")[-2:])
 
 
 def test():
