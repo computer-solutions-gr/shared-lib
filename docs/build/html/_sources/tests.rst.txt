@@ -1,0 +1,45 @@
+tests package
+=============
+
+Submodules
+----------
+
+tests.test\_cega module
+-----------------------
+
+.. automodule:: tests.test_cega
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_dataframe\_save\_df module
+--------------------------------------
+
+.. automodule:: tests.test_dataframe_save_df
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_madex module
+------------------------
+
+.. automodule:: tests.test_madex
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests.test\_probabilities module
+--------------------------------
+
+.. automodule:: tests.test_probabilities
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: tests
+   :members:
+   :undoc-members:
+   :show-inheritance:

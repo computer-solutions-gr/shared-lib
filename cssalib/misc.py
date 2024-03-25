@@ -1,23 +1,45 @@
+"""
+Misc Module
+"""
+
 import requests
 
-"""Generates a list of leap years between 2000 and 2050.
 
-Uses a list comprehension to check each year in the range 
-2000-2050, and include it if it meets the leap year criteria.
-"""
-leap_years = [
-    year
-    for year in range(2000, 2051)
-    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
-]
+def leap_years(start_year: int, end_year: int) -> list:
+    """
+    The function `leap_years` returns a list of leap years within a specified range of years.
 
-"""Makes a GET request to the ipify API to retrieve the public IP address.
+    Args:
+      start_year (int): The `start_year` parameter is the beginning year from which you want to start
+        checking for leap years.
+      end_year (int): The `end_year` parameter represents the ending year for the range of years for
+        which you want to find leap years. This function will return a list of leap years between
+        `start_year` (inclusive) and `end_year` (exclusive).
 
-The API endpoint is https://api64.ipify.org?format=json, and it returns the IP 
-address in JSON format. The code extracts just the "ip" field from the JSON 
-response and stores it in the public_ip variable.
-"""
-public_ip = requests.get("https://api64.ipify.org?format=json").json()["ip"]
+    Returns:
+        list: The function `leap_years` returns a list of leap years between the `start_year` (inclusive) and
+        `end_year` (exclusive) provided as input arguments. The list comprehension checks each year in the
+        range for leap year conditions (divisible by 4 but not by 100 unless also divisible by 400) and
+        includes the year in the list if it meets these conditions.
+    """
+    return [
+        year
+        for year in range(start_year, end_year)
+        if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+    ]
+
+
+def public_ip() -> str:
+    """
+    This Python function retrieves and returns the public IP address of the current machine using an
+    external API.
+    
+    Returns:
+        The `public_ip` function returns the public IP address of the current machine by making a request
+        to the "https://api64.ipify.org?format=json" API and extracting the IP address from the JSON
+        response.
+    """
+    return requests.get("https://api64.ipify.org?format=json").json()["ip"]
 
 
 def most_common_element(_list: list):

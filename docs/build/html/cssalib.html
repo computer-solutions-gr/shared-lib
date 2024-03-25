@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cssalib package &mdash; CSSA Shared Library 0.18 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8f87a041"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="projects package" href="projects.html" />
+    <link rel="prev" title="shared-lib" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CSSA Shared Library
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">shared-lib</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">cssalib package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cssalib.dataframes">cssalib.dataframes module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.dataframes.read_df"><code class="docutils literal notranslate"><span class="pre">read_df()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.dataframes.save_df"><code class="docutils literal notranslate"><span class="pre">save_df()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.dataframes.slice_df"><code class="docutils literal notranslate"><span class="pre">slice_df()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cssalib.misc">cssalib.misc module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.misc.extract_domain_from_email"><code class="docutils literal notranslate"><span class="pre">extract_domain_from_email()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.misc.leap_years"><code class="docutils literal notranslate"><span class="pre">leap_years()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.misc.most_common_element"><code class="docutils literal notranslate"><span class="pre">most_common_element()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.misc.public_ip"><code class="docutils literal notranslate"><span class="pre">public_ip()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.misc.test"><code class="docutils literal notranslate"><span class="pre">test()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cssalib.mongo">cssalib.mongo module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.mongo.MongoDB"><code class="docutils literal notranslate"><span class="pre">MongoDB</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cssalib.probabilities">cssalib.probabilities module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.probabilities.convert_dec_to_prob"><code class="docutils literal notranslate"><span class="pre">convert_dec_to_prob()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.probabilities.convert_frac_to_dec"><code class="docutils literal notranslate"><span class="pre">convert_frac_to_dec()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.probabilities.convert_frac_to_prob"><code class="docutils literal notranslate"><span class="pre">convert_frac_to_prob()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.probabilities.convert_prob_to_dec"><code class="docutils literal notranslate"><span class="pre">convert_prob_to_dec()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.probabilities.cumulative_binomial_probabilities"><code class="docutils literal notranslate"><span class="pre">cumulative_binomial_probabilities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cssalib.probabilities.exact_binomial_probability"><code class="docutils literal notranslate"><span class="pre">exact_binomial_probability()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cssalib.system_funcs">cssalib.system_funcs module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cssalib">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="projects.html">projects package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CSSA Shared Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">shared-lib</a></li>
+      <li class="breadcrumb-item active">cssalib package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/cssalib.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cssalib-package">
+<h1>cssalib package<a class="headerlink" href="#cssalib-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-cssalib.dataframes">
+<span id="cssalib-dataframes-module"></span><h2>cssalib.dataframes module<a class="headerlink" href="#module-cssalib.dataframes" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cssalib.dataframes.read_df">
+<span class="sig-prename descclassname"><span class="pre">cssalib.dataframes.</span></span><span class="sig-name descname"><span class="pre">read_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'test.pkl'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cssalib.dataframes.read_df" title="Link to this definition"></a></dt>
+<dd><p>Reads a pandas DataFrame from a pickle file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – The name of the pickle file to read from (default: “test.pkl”).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The pandas DataFrame read from the pickle file.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Any exceptions that occur during the reading process.</strong> – </p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">read_df</span><span class="p">(</span><span class="s2">&quot;data.pkl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cssalib.dataframes.save_df">
+<span class="sig-prename descclassname"><span class="pre">cssalib.dataframes.</span></span><span class="sig-name descname"><span class="pre">save_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'test.pkl'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cssalib.dataframes.save_df" title="Link to this definition"></a></dt>
+<dd><p>Saves a pandas DataFrame to a pickle file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataframe</strong> – The pandas DataFrame to be saved.</p></li>
+<li><p><strong>filename</strong> – The name of the pickle file (default: “test.pkl”).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">save_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;data.pkl&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cssalib.dataframes.slice_df">
+<span class="sig-prename descclassname"><span class="pre">cssalib.dataframes.</span></span><span class="sig-name descname"><span class="pre">slice_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cssalib.dataframes.slice_df" title="Link to this definition"></a></dt>
+<dd><p>Slices a DataFrame based on the specified index and number of rows.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataframe</strong> (<em>pandas.DataFrame</em>) – The DataFrame to be sliced.</p></li>
+<li><p><strong>index</strong> (<em>int</em>) – The starting index of the slice.</p></li>
+<li><p><strong>number</strong> (<em>int</em>) – The number of rows to include in the slice.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The sliced DataFrame.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>sliced_df = slice_df(dataframe, 2, 5)</p>
+</dd></dl>
+
+</section>
+<section id="module-cssalib.misc">
+<span id="cssalib-misc-module"></span><h2>cssalib.misc module<a class="headerlink" href="#module-cssalib.misc" title="Link to this heading"></a></h2>
+<p>Misc Module</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="cssalib.misc.extract_domain_from_email">
+<span class="sig-prename descclassname"><span class="pre">cssalib.misc.</span></span><span class="sig-name descname"><span class="pre">extract_domain_from_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#cssalib.misc.extract_domain_from_email" title="Link to this definition"></a></dt>
+<dd><p>Extracts the domain from the given email address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>email</strong> (<em>str</em>) – The email address from which to extract the domain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The domain extracted from the email address.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>AttributeError</strong> – If the domain pattern is not found in the email address.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cssalib.misc.leap_years">
+<span class="sig-prename descclassname"><span class="pre">cssalib.misc.</span></span><span class="sig-name descname"><span class="pre">leap_years</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#cssalib.misc.leap_years" title="Link to this definition"></a></dt>
+<dd><p>The function <cite>leap_years</cite> returns a list of leap years within a specified range of years.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_year</strong> (<em>int</em>) – The <cite>start_year</cite> parameter is the beginning year from which you want to start
+checking for leap years.</p></li>
+<li><p><strong>end_year</strong> (<em>int</em>) – The <cite>end_year</cite> parameter represents the ending year for the range of years for
+which you want to find leap years. This function will return a list of leap years between
+<cite>start_year</cite> (inclusive) and <cite>end_year</cite> (exclusive).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The function <cite>leap_years</cite> returns a list of leap years between the <cite>start_year</cite> (inclusive) and
+<cite>end_year</cite> (exclusive) provided as input arguments. The list comprehension checks each year in the
+range for leap year conditions (divisible by 4 but not by 100 unless also divisible by 400) and
+includes the year in the list if it meets these conditions.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cssalib.misc.most_common_element">
+<span class="sig-prename descclassname"><span class="pre">cssalib.misc.</span></span><span class="sig-name descname"><span class="pre">most_common_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cssalib.misc.most_common_element" title="Link to this definition"></a></dt>
+<dd><p>Returns the most common element in the given list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>_list</strong> (<em>list</em>) – A list of elements.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The most common element in the list.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">most_common_element</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cssalib.misc.public_ip">
+<span class="sig-prename descclassname"><span class="pre">cssalib.misc.</span></span><span class="sig-name descname"><span class="pre">public_ip</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#cssalib.misc.public_ip" title="Link to this definition"></a></dt>
+<dd><p>This Python function retrieves and returns the public IP address of the current machine using an
+external API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The <cite>public_ip</cite> function returns the public IP address of the current machine by making a request
+to the “<a class="reference external" href="https://api64.ipify.org?format=json">https://api64.ipify.org?format=json</a>” API and extracting the IP address from the JSON
+response.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cssalib.misc.test">
+<span class="sig-prename descclassname"><span class="pre">cssalib.misc.</span></span><span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cssalib.misc.test" title="Link to this definition"></a></dt>
+<dd><p>Prints ‘Test’ and returns ‘Test’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>‘Test’</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-cssalib.mongo">
+<span id="cssalib-mongo-module"></span><h2>cssalib.mongo module<a class="headerlink" href="#module-cssalib.mongo" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="cssalib.mongo.MongoDB">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cssalib.mongo.</span></span><span class="sig-name descname"><span class="pre">MongoDB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cssalib.mongo.MongoDB" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>MongoDB client class for connecting to a MongoDB database.</p>
+<p>Provides methods for pinging the server, listing databases and collections,
+and performing CRUD operations on collections. Designed to be instantiated
+with a MongoDB connection URI.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cssalib.mongo.MongoDB.list_collections">
+<span class="sig-name descname"><span class="pre">list_collections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cssalib.mongo.MongoDB.list_collections" title="Link to this definition"></a></dt>
+<dd><p>Retrieves a list of collection names for a specific database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>database_name</strong> (<em>str</em>) – The name of the database to list collections from.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of collection names in the specified database.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cssalib.mongo.MongoDB.list_databases">
+<span class="sig-name descname"><span class="pre">list_databases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cssalib.mongo.MongoDB.list_databases" title="Link to this definition"></a></dt>
+<dd><p>Retrieves a list of database names from the MongoDB client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of database names.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cssalib.mongo.MongoDB.ping">
+<span class="sig-name descname"><span class="pre">ping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cssalib.mongo.MongoDB.ping" title="Link to this definition"></a></dt>
+<dd><p>Pings the MongoDB deployment to check the connection status.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-cssalib.probabilities">
+<span id="cssalib-probabilities-module"></span><h2>cssalib.probabilities module<a class="headerlink" href="#module-cssalib.probabilities" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cssalib.probabilities.convert_dec_to_prob">
+<span class="sig-prename descclassname"><span class="pre">cssalib.probabilities.</span></span><span class="sig-name descname"><span class="pre">convert_dec_to_prob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#cssalib.probabilities.convert_dec_to_prob" title="Link to this definition"></a></dt>
+<dd><p>Converts a decimal probability to a probability value between 0 and 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dec</strong> (<em>float</em>) – The decimal probability value to convert.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The probability value between 0 and 1.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cssalib.probabilities.convert_frac_to_dec">
+<span class="sig-prename descclassname"><span class="pre">cssalib.probabilities.</span></span><span class="sig-name descname"><span class="pre">convert_frac_to_dec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">denom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#cssalib.probabilities.convert_frac_to_dec" title="Link to this definition"></a></dt>
+<dd><p>Converts a fraction to a decimal probability value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nom</strong> (<em>int</em>) – The numerator of the fraction.</p></li>
+<li><p><strong>denom</strong> (<em>int</em>) – The denominator of the fraction.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The decimal probability value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cssalib.probabilities.convert_frac_to_prob">
+<span class="sig-prename descclassname"><span class="pre">cssalib.probabilities.</span></span><span class="sig-name descname"><span class="pre">convert_frac_to_prob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">denom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#cssalib.probabilities.convert_frac_to_prob" title="Link to this definition"></a></dt>
+<dd><p>Converts a fraction to a probability value between 0 and 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nom</strong> (<em>int</em>) – The numerator of the fraction.</p></li>
+<li><p><strong>denom</strong> (<em>int</em>) – The denominator of the fraction.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The probability value between 0 and 1.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cssalib.probabilities.convert_prob_to_dec">
+<span class="sig-prename descclassname"><span class="pre">cssalib.probabilities.</span></span><span class="sig-name descname"><span class="pre">convert_prob_to_dec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prob</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#cssalib.probabilities.convert_prob_to_dec" title="Link to this definition"></a></dt>
+<dd><p>Converts a probability value between 0 and 1 to a decimal probability.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prob</strong> (<em>float</em>) – The probability value between 0 and 1 to convert.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The decimal probability value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cssalib.probabilities.cumulative_binomial_probabilities">
+<span class="sig-prename descclassname"><span class="pre">cssalib.probabilities.</span></span><span class="sig-name descname"><span class="pre">cumulative_binomial_probabilities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number_of_trials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_successes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">success_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#cssalib.probabilities.cumulative_binomial_probabilities" title="Link to this definition"></a></dt>
+<dd><p>Calculates the cumulative binomial probability distribution for the given
+number of trials, number of successes, and success probability.</p>
+<p>Returns the probabilities for X &lt; x, X &lt;= x, X &gt; x, and X &gt;= x, where x is
+the provided number of successes.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cssalib.probabilities.exact_binomial_probability">
+<span class="sig-prename descclassname"><span class="pre">cssalib.probabilities.</span></span><span class="sig-name descname"><span class="pre">exact_binomial_probability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number_of_trials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_successes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">success_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#cssalib.probabilities.exact_binomial_probability" title="Link to this definition"></a></dt>
+<dd><p>Calculates the exact binomial probability for the given number of trials,
+number of successes, and success probability.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>number_of_trials</strong> (<em>int</em>) – The number of trials.</p></li>
+<li><p><strong>number_of_successes</strong> (<em>int</em>) – The number of successes.</p></li>
+<li><p><strong>success_probability</strong> (<em>float</em>) – The probability of success on each trial.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The exact binomial probability.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-cssalib.system_funcs">
+<span id="cssalib-system-funcs-module"></span><h2>cssalib.system_funcs module<a class="headerlink" href="#module-cssalib.system_funcs" title="Link to this heading"></a></h2>
+</section>
+<section id="module-cssalib">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cssalib" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="shared-lib" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="projects.html" class="btn btn-neutral float-right" title="projects package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Stavros Pitoglou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>projects.diabetes package &mdash; CSSA Shared Library 0.18 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8f87a041"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="projects package" href="projects.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CSSA Shared Library
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">projects</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="projects.html">projects package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="projects.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">projects.diabetes package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="projects.html#module-projects">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CSSA Shared Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">projects</a></li>
+          <li class="breadcrumb-item"><a href="projects.html">projects package</a></li>
+      <li class="breadcrumb-item active">projects.diabetes package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/projects.diabetes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="projects-diabetes-package">
+<h1>projects.diabetes package<a class="headerlink" href="#projects-diabetes-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-projects.diabetes.cega">
+<span id="projects-diabetes-cega-module"></span><h2>projects.diabetes.cega module<a class="headerlink" href="#module-projects.diabetes.cega" title="Link to this heading"></a></h2>
+<p>CLARKE ERROR GRID ANALYSIS      ClarkeErrorGrid.py</p>
+<p>Need Matplotlib Pyplot</p>
+<p>The Clarke Error Grid shows the differences between a blood glucose predictive measurement and a reference measurement,
+and it shows the clinical significance of the differences between these values.
+The x-axis corresponds to the reference value and the y-axis corresponds to the prediction.
+The diagonal line shows the prediction value is the exact same as the reference value.
+This grid is split into five zones. Zone A is defined as clinical accuracy while
+zones C, D, and E are considered clinical error.</p>
+<dl class="simple">
+<dt>Zone A: Clinically Accurate</dt><dd><p>This zone holds the values that differ from the reference values no more than 20 percent
+or the values in the hypoglycemic range (&lt;70 mg/dl).
+According to the literature, values in zone A are considered clinically accurate.
+These values would lead to clinically correct treatment decisions.</p>
+</dd>
+<dt>Zone B: Clinically Acceptable</dt><dd><p>This zone holds values that differe more than 20 percent but would lead to
+benign or no treatment based on assumptions.</p>
+</dd>
+<dt>Zone C: Overcorrecting</dt><dd><p>This zone leads to overcorrecting acceptable BG levels.</p>
+</dd>
+<dt>Zone D: Failure to Detect</dt><dd><p>This zone leads to failure to detect and treat errors in BG levels.
+The actual BG levels are outside of the acceptable levels while the predictions
+lie within the acceptable range</p>
+</dd>
+<dt>Zone E: Erroneous treatment</dt><dd><p>This zone leads to erroneous treatment because prediction values are opposite to
+actual BG levels, and treatment would be opposite to what is recommended.</p>
+</dd>
+<dt>SYNTAX:</dt><dd><p>plot, zone = clarke_error_grid(ref_values, pred_values, title_string)</p>
+</dd>
+<dt>INPUT:</dt><dd><p>ref_values          List of n reference values.
+pred_values         List of n prediciton values.
+title_string        String of the title.</p>
+</dd>
+<dt>OUTPUT:</dt><dd><dl class="simple">
+<dt>plot                The Clarke Error Grid Plot returned by the function.</dt><dd><p>Use this with plot.show()</p>
+</dd>
+<dt>zone                List of values in each zone.</dt><dd><p>0=A, 1=B, 2=C, 3=D, 4=E</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>plot, zone = clarke_error_grid(ref_values, pred_values, “00897741 Linear Regression”)
+plot.show()</p>
+<p>References:
+[1]     Clarke, WL. (2005). “The Original Clarke Error Grid Analysis (EGA).”</p>
+<blockquote>
+<div><p>Diabetes Technology and Therapeutics 7(5), pp. 776-779.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>[2]     Maran, A. et al. (2002). “Continuous Subcutaneous Glucose Monitoring in Diabetic</dt><dd><p>Patients” Diabetes Care, 25(2).</p>
+</dd>
+<dt>[3]     Kovatchev, B.P. et al. (2004). “Evaluating the Accuracy of Continuous Glucose-</dt><dd><p>Monitoring Sensors” Diabetes Care, 27(8).</p>
+</dd>
+<dt>[4]     Guevara, E. and Gonzalez, F. J. (2008). Prediction of Glucose Concentration by</dt><dd><p>Impedance Phase Measurements, in MEDICAL PHYSICS: Tenth Mexican
+Symposium on Medical Physics, Mexico City, Mexico, vol. 1032, pp.
+259261.</p>
+</dd>
+<dt>[5]     Guevara, E. and Gonzalez, F. J. (2010). Joint optical-electrical technique for</dt><dd><p>noninvasive glucose monitoring, REVISTA MEXICANA DE FISICA, vol. 56,
+no. 5, pp. 430434.</p>
+</dd>
+</dl>
+<p>Made by:
+Trevor Tsue
+7/18/17</p>
+<p>Based on the Matlab Clarke Error Grid Analysis File Version 1.2 by:
+Edgar Guevara Codina
+<a class="reference external" href="mailto:codina&#37;&#52;&#48;REMOVETHIScactus&#46;iico&#46;uaslp&#46;mx">codina<span>&#64;</span>REMOVETHIScactus<span>&#46;</span>iico<span>&#46;</span>uaslp<span>&#46;</span>mx</a>
+March 29 2013</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="projects.diabetes.cega.clarke_error_grid">
+<span class="sig-prename descclassname"><span class="pre">projects.diabetes.cega.</span></span><span class="sig-name descname"><span class="pre">clarke_error_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ref_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#projects.diabetes.cega.clarke_error_grid" title="Link to this definition"></a></dt>
+<dd><p>Plots Clarke Error Grid and calculates zone statistics.</p>
+<p>Takes in lists of reference and predicted glucose values, and a title string.
+Checks values are valid and prints warnings if not.
+Plots reference vs predicted values on a Clarke Error Grid.
+Calculates number of points in each zone A-E.
+Returns matplotlib plot and list of zone counts.</p>
+<p>For use in evaluating continuous glucose monitoring prediction accuracy.</p>
+</dd></dl>
+
+</section>
+<section id="module-projects.diabetes.madex">
+<span id="projects-diabetes-madex-module"></span><h2>projects.diabetes.madex module<a class="headerlink" href="#module-projects.diabetes.madex" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="projects.diabetes.madex.graph_vs_mse">
+<span class="sig-prename descclassname"><span class="pre">projects.diabetes.madex.</span></span><span class="sig-name descname"><span class="pre">graph_vs_mse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#projects.diabetes.madex.graph_vs_mse" title="Link to this definition"></a></dt>
+<dd><p>Plots mean adjusted exponent error and mean squared error vs a range of
+predictions around a reference value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – The reference value to center the predictions around.</p></li>
+<li><p><strong>value_range</strong> – The range above and below the reference value to plot.</p></li>
+<li><p><strong>action</strong> – ‘save’ to save the plot instead of displaying.</p></li>
+<li><p><strong>save_folder</strong> – Folder to save plot if action=’save’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The matplotlib plot object if action is not ‘save’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="projects.diabetes.madex.mean_adjusted_exponent_error">
+<span class="sig-prename descclassname"><span class="pre">projects.diabetes.madex.</span></span><span class="sig-name descname"><span class="pre">mean_adjusted_exponent_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">125</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">55</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#projects.diabetes.madex.mean_adjusted_exponent_error" title="Link to this definition"></a></dt>
+<dd><p>Calculates the mean adjusted exponent error between two arrays.</p>
+<p>This error metric penalizes large errors more than small errors by raising
+the absolute difference to an exponent. The exponent is calculated for each
+data point based on how far the prediction is from the true value and a
+configurable center, critical range, and slope.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_true</strong> – Array of true target values.</p></li>
+<li><p><strong>y_pred</strong> – Array of predicted target values.</p></li>
+<li><p><strong>center</strong> – Center point to calculate exponent. Default 125.</p></li>
+<li><p><strong>critical_range</strong> – Range to transition exponent. Default 55.</p></li>
+<li><p><strong>slope</strong> – Slope of exponent transition. Default 100.</p></li>
+<li><p><strong>verbose</strong> – Print exponent for each data point if True. Default False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The mean adjusted exponent error between y_true and y_pred.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-projects.diabetes.test">
+<span id="projects-diabetes-test-module"></span><h2>projects.diabetes.test module<a class="headerlink" href="#module-projects.diabetes.test" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="projects.diabetes.test.d_test">
+<span class="sig-prename descclassname"><span class="pre">projects.diabetes.test.</span></span><span class="sig-name descname"><span class="pre">d_test</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#projects.diabetes.test.d_test" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-projects.diabetes">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-projects.diabetes" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="projects.html" class="btn btn-neutral float-left" title="projects package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Stavros Pitoglou.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
