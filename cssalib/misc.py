@@ -1,17 +1,22 @@
 import requests
 
-# A list of leap years between 2000 and 2050.
+"""Generates a list of leap years between 2000 and 2050.
+
+Uses a list comprehension to check each year in the range 
+2000-2050, and include it if it meets the leap year criteria.
+"""
 leap_years = [
     year
     for year in range(2000, 2051)
     if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
 ]
 
-# The line `public_ip = requests.get("https://api64.ipify.org?format=json").json()["ip"]` is making a
-# GET request to the "https://api64.ipify.org?format=json" API endpoint to retrieve the public IP
-# address of the machine running the code. The response from the API is in JSON format, and the code
-# is extracting the IP address value from the JSON response using the key "ip" and storing it in the
-# variable `public_ip`.
+"""Makes a GET request to the ipify API to retrieve the public IP address.
+
+The API endpoint is https://api64.ipify.org?format=json, and it returns the IP 
+address in JSON format. The code extracts just the "ip" field from the JSON 
+response and stores it in the public_ip variable.
+"""
 public_ip = requests.get("https://api64.ipify.org?format=json").json()["ip"]
 
 
@@ -53,5 +58,11 @@ def extract_domain_from_email(email: str) -> str:
 
 
 def test():
+    """
+    Prints 'Test' and returns 'Test'.
+
+    Returns:
+        str: 'Test'
+    """
     print("Test")
     return "Test"

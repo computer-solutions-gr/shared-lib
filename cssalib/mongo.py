@@ -4,6 +4,14 @@ from loguru import logger
 
 
 class MongoDB:
+    """
+    MongoDB client class for connecting to a MongoDB database.
+
+    Provides methods for pinging the server, listing databases and collections,
+    and performing CRUD operations on collections. Designed to be instantiated
+    with a MongoDB connection URI.
+    """
+
     def __init__(self, uri):
         """
         Initializes a new MongoDB client using the provided URI.
@@ -35,7 +43,7 @@ class MongoDB:
 
         Returns:
             list: A list of database names.
-"""
+        """
 
         db_names = self.client.list_database_names()
         logger.info(f"Found {len(db_names)} databases: {db_names}")
